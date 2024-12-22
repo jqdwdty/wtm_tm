@@ -68,7 +68,6 @@ jobs:
             any::httr2
             any::openssl
             any::priceR
-      - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: "Install arrow"
         run: Rscript 'arrow.R'
       - name: "Script - Run"

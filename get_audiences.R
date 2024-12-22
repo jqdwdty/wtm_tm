@@ -764,25 +764,25 @@ log_final_statistics <- function(stage, tf, cntry, new_ds, latest_ds,
   out <<- httr::POST(url, body = list(chat_id = TELEGRAM_GROUP_ID, text = the_message, parse_mode = "Markdown"), encode = "form")
   if (httr::http_error(out)) {
     print(httr::content(out))
+    print(httr::headers(out))
   }
 }
 
 try({
-  
-# Example integration (call this after processing):
-log_final_statistics(
-  stage = "Process Complete",
-  tf = tf,
-  cntry = the_cntry,
-  new_ds = new_ds,
-  latest_ds = latest_ds,
-  the_rows_to_be_checked = the_rows_to_be_checked,
-  election_dat = election_dat,
-  new_elex = new_elex,
-  pushed_successfully = the_status_code,
-  togetstuff = togetstuff,
-  report_matched = report_matched
-)
+  # Example integration (call this after processing):
+  log_final_statistics(
+    stage = "Process Complete",
+    tf = tf,
+    cntry = the_cntry,
+    new_ds = new_ds,
+    latest_ds = latest_ds,
+    the_rows_to_be_checked = the_rows_to_be_checked,
+    election_dat = election_dat,
+    new_elex = new_elex,
+    pushed_successfully = the_status_code,
+    togetstuff = togetstuff,
+    report_matched = report_matched
+  )
 })
 
 
